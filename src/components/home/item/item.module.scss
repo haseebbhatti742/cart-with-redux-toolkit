@@ -6,6 +6,8 @@
   margin: 15px;
   border-radius: 10px;
   border: 1px solid gray;
+  display: flex;
+  flex-direction: column;
 
   .upper-section {
     display: flex;
@@ -24,6 +26,8 @@
   }
 
   .footer-section {
+    margin-top: auto;
+
     .category {
       h3 {
         font-style: italic;

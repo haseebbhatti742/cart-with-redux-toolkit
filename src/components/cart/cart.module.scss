@@ -1,11 +1,22 @@
+@import "../../App.scss";
+
 .cart {
   background-color: rgb(235, 233, 233);
   border-radius: 10px;
   display: flex;
+  flex-direction: row;
+
+  @media only screen and (max-width: $maxWidth1000) {
+    flex-direction: column;
+  }
 
   .cart-items {
     width: 60%;
     padding: 20px;
+
+    @media only screen and (max-width: $maxWidth1000) {
+      width: 100%;
+    }
 
     .header {
       display: flex;
@@ -20,6 +31,10 @@
     padding: 20px;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+
+    @media only screen and (max-width: $maxWidth1000) {
+      width: 100%;
+    }
 
     .checkout {
       width: 100%;

@@ -42,8 +42,16 @@
     width: 15%;
     display: flex;
     justify-content: space-evenly;
+
     img {
       width: 30px;
+    }
+
+    span {
+      background-color: red;
+      color: white;
+      padding: 7px;
+      border-radius: 50%;
     }
   }
 }

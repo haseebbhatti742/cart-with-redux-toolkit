@@ -22,8 +22,12 @@ function CartItem({ item, deleteItem, updateQuantity }) {
       <div className={classes["buttons"]}>
         <p
           onClick={() => {
-            setQuantity(parseInt(quantity) - 1);
-            dispatch(updateQuantity({ id: item.id, quantity: +quantity - 1 }));
+            if (quantity > 1) {
+              setQuantity(parseInt(quantity) - 1);
+              dispatch(
+                updateQuantity({ id: item.id, quantity: +quantity - 1 })
+              );
+            }
           }}
         >
           -

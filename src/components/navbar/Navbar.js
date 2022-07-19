@@ -8,7 +8,7 @@ import bag from "../../assets/images/bag.png";
 import { ROUTES } from "../router/routes";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { getCartItems } from "../features/cart/cartSlice";
+import { getCartItems } from "../cart/cartSlice";
 
 function Navbar() {
   const cartItems = useSelector(getCartItems);

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import classesHome from "./home.module.scss";
 import Item from "./item/Item";
 import { selectItems, setItems } from "./homeSlice";
-import { setCart } from "../features/cart/cartSlice";
+import { setCart } from "../cart/cartSlice";
 
 function Home() {
   const items = useSelector(selectItems);
@@ -16,7 +16,7 @@ function Home() {
         console.log(res);
         dispatch(setItems(res));
       });
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>

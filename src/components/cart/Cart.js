@@ -6,12 +6,8 @@ import {
   getCartTotal,
   deleteItem,
   updateQuantity,
-} from "../features/cart/cartSlice";
+} from "./cartSlice";
 import { useSelector } from "react-redux";
-// import { Elements } from "@stripe/react-stripe-js";
-// import { loadStripe } from "@stripe/stripe-js";
-
-// const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
 function Cart() {
   const { cartItems, cartTotal } = useSelector((state) => ({
@@ -31,14 +27,16 @@ function Cart() {
           <p>{cartItems.length} Items</p>
         </div>
         <hr />
-        {cartItems.map((item) => (
-          <CartItem
-            key={item.id}
-            item={item}
-            deleteItem={deleteItem}
-            updateQuantity={updateQuantity}
-          />
-        ))}
+        <div style={{ maxHeight: "600px", overflowY: "auto" }}>
+          {cartItems.map((item) => (
+            <CartItem
+              key={item.id}
+              item={item}
+              deleteItem={deleteItem}
+              updateQuantity={updateQuantity}
+            />
+          ))}
+        </div>
       </div>
       <div className={classes["total-section"]}>
         <h2>Total</h2>

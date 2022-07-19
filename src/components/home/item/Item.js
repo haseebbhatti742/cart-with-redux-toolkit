@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./item.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { getCartItems, deleteItem } from "../../features/cart/cartSlice";
+import { getCartItems, deleteItem } from "../../cart/cartSlice";
 
 function Item({ item, setCart }) {
   const dispatch = useDispatch();
@@ -37,7 +37,7 @@ function Item({ item, setCart }) {
               dispatch(deleteItem(item.id));
             }}
           >
-            Delete From Cart
+            Remove From Cart
           </div>
         )}
       </div>
