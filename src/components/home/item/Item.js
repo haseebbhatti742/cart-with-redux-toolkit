@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./item.module.scss";
 import { useDispatch, useSelector } from "react-redux";
-import { getCartItems } from "../../features/cart/cartSlice";
+import { getCartItems, deleteItem } from "../../features/cart/cartSlice";
 
 function Item({ item, setCart }) {
   const dispatch = useDispatch();
@@ -31,7 +31,14 @@ function Item({ item, setCart }) {
             Add To Cart
           </div>
         ) : (
-          <div className={classes["cart-button"]}>Added to Cart</div>
+          <div
+            className={classes["cart-button-yellow"]}
+            onClick={() => {
+              dispatch(deleteItem(item.id));
+            }}
+          >
+            Delete From Cart
+          </div>
         )}
       </div>
     </div>

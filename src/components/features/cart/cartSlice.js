@@ -10,7 +10,7 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     setCart: (state, action) => {
-      const find = state.value.some((item) => item.id == action.payload.id);
+      const find = state.value.some((item) => item.id === action.payload.id);
       find
         ? console.log("Already Added")
         : state.value.push({
@@ -26,7 +26,7 @@ export const cartSlice = createSlice({
 
     updateQuantity: (state, action) => {
       const index = state.value.findIndex(
-        (item) => item.id == action.payload.id
+        (item) => item.id === action.payload.id
       );
       state.value[index].quantity = action.payload.quantity;
       state.value[index].subTotal =

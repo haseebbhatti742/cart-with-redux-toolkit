@@ -7,13 +7,21 @@ import {
   deleteItem,
   updateQuantity,
 } from "../features/cart/cartSlice";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+// import { Elements } from "@stripe/react-stripe-js";
+// import { loadStripe } from "@stripe/stripe-js";
+
+// const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
 
 function Cart() {
   const { cartItems, cartTotal } = useSelector((state) => ({
     cartItems: getCartItems(state),
     cartTotal: getCartTotal(state),
   }));
+
+  // const options = {
+  //   clientSecret: "{{CLIENT_SECRET)}}",
+  // };
 
   return (
     <div className={classes["cart"]}>
